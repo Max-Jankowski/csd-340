@@ -1,0 +1,79 @@
+/*
+    Max Jankowski
+    CSD 340
+    Module 3.3 CSS
+	
+	*/
+
+/* Center the h1 title */
+h1 {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', serif; /*added font families after re-watching video in resources from module 2*/
+    font-weight: 400;
+}
+
+/* The side-by-side div style */
+.left-div, .right-div {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* a left margin for spacing for right div*/
+.right-div {
+    margin-left: 5%;
+}
+
+/* h3 font */
+h3 {
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* weight and font of the list */
+ol, ul {
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Ordered list style with border */
+.left-div h3, .left-div ol {
+    border: 1px solid red;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.left-div ol {
+    list-style-position: inside;
+}
+
+/* Unordered list styling with a border */
+.right-div h3, .right-div ul {
+    border: 1px dashed red;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.right-div ul {
+    list-style-type: upper-roman;
+    list-style-position: inside;
+}
+
+/* Bottom style */
+.bottom-div {
+    width: 100%;
+    margin-top: 60%;
+    float: right;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+/* style and font of link */
+a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+    text-decoration: underline;
+}
