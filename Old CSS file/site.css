@@ -1,0 +1,37 @@
+/*
+  Max Jankowksi 
+  CSD 340 
+  Module 3 assignment 3.20
+*/
+
+/* Container styling */
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* Heading styles - creating a cohesive color scheme */
+h1, h2, h3, h4 {
+    background-color: #1a1a2e;  /* Dark navy */
+    color: #eee;
+    border: 1px solid #D6A800;   /* Gold border as required */
+    padding: 10px;
+}
+
+/* Link styling */
+a {
+    color: #0f4c75; 
+    text-decoration: none;
+}
+
+/* Link hover effect */
+a:hover {
+    color: #3282b8;           
+    text-decoration: underline;
+}
+
+/* Visited link styling */
+a:visited {
+    color: #16213e;           
+}
