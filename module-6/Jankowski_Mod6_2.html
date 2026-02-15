@@ -1,0 +1,74 @@
+<!-- 
+    Title: CSD 340 Web Development with HTML and CSS
+    Author: Max Jankowski
+    Date: 2/15/2026
+    Description: Assignment 6.2 - Build a Web Page, Part 5
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title> <!-- Setting the title required in the header  -->
+    <link rel="stylesheet" href="Jankowski_Mod6_2.css"> <!-- Connects the html to the style sheet -->
+</head>
+<body>
+    <!-- Header section for the body of the page -->
+    <header>
+        <h1>Assignment 6.2: Build a Web Page - Part 5</h1> <!-- Title as required and shown in example -->
+    </header>
+
+    <!-- building the navigation bar, links are just placeholder at the moment-->
+    <div id="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- main container, acts as a wrpper for the content  -->
+    <div id="container">
+        <div class="card">   <!-- creating a card class that will hold conent and links to favorite foods in an ordered list -->
+            <div class="card-title"> <!-- The tile for this card -->
+                Top 5 Favorite Foods
+            </div>
+            <div class="card-content">
+                <ol> <!-- Starting the ordered list as learned early on in th HTML/css book. This is not in any particular order, food preferances change. -->
+                    <li>
+                        <a href="https://www.simplyrecipes.com/recipes/homemade_pizza/" target="_blank">
+                            Pizza
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.foodnetwork.com/recipes/bobby-flay/perfectly-grilled-steak-recipe-1973350" target="_blank">
+                            Grilled Steak
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.foodnetwork.com/recipes/rachael-ray/macaroni-and-cheddar-cheese-recipe-2131153" target="_blank">
+                            Mac and Cheese
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.spendwithpennies.com/homemade-pierogi/" target="_blank">
+                            Pierogi
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tastesbetterfromscratch.com/braised-short-ribs/" target="_blank">
+                            Braised Short Ribs
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Completing the footer section -->
+    <footer>
+        <p>
+            <a href="../index.html">&laquo; Back to Landing Page</a>
+        </p>
+    </footer>
+</body>
+</html>
