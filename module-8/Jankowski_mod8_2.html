@@ -1,0 +1,176 @@
+<!-- 
+	Max Jankowski
+    Bellevue University 
+	CSD 340 Assignment Module 8
+	2/21/2026
+    
+	Copied html code from module 6 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>  
+    <link rel="stylesheet" href="Jankowski_Mod8_2.css"> <!-- Connects the html to the style sheet -->  <!-- Updated css link to direst towards new css -->
+</head>
+<body>
+    <!-- Header section for the body of the page -->
+    <header>
+        <!--  updated h1 text to meet requirements set by new assignment -->
+        <h1>Assignment 8.2: Build a Web Page - Part 6</h1> <!-- Title as required and shown in example -->
+    </header>
+
+    <!-- building the navigation bar, links are just placeholder at the moment-->
+    <div id="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- main container, acts as a wrpper for the content  -->
+    <div id="container">
+
+        <!-- *** added a movies card for new assginment  -->
+        <!-- Card follows the same card > card-title > card-content structure as the foods card -->
+        <div class="card">
+            <div class="card-title"> <!-- The title for this card -->
+                Top 5 Favorite Movies
+            </div>
+            <div class="card-content">
+                <!-- column 1 is the movie name, I included links to IMBD -->
+                <!-- column 2 is an unordered list of 2 characters from each movie -->
+                <table id="movies">  <!-- followed examples from chapter 6 of the textbook -->
+                    <thead>
+                        <tr>
+                            <th>Movie Name</th>
+                            <th>Two Characters</th>
+                        </tr>
+                    </thead>
+                    <tbody>                       
+                        <tr>
+                            <td>
+                                <a href="https://www.imdb.com/title/tt0094625/" target="_blank">
+                                    Akira
+                                </a>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Kaneda</li>
+                                    <li>Tetsuo</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <a href="https://www.imdb.com/title/tt13288678/" target="_blank">
+                                    Mobile Suit Gundam Hathaway
+                                </a>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Hathaway Noa</li>
+                                    <li>Gigi Andalucia</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <a href="https://www.imdb.com/title/tt1386588/" target="_blank">
+                                    The Other Guys
+                                </a>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Allen Gamble</li>
+                                    <li>Terry Hoitz</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <a href="https://www.imdb.com/title/tt0103064/" target="_blank">
+                                    Terminator 2: Judgment Day
+                                </a>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>The Terminator</li>
+                                    <li>Sarah Connor</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <a href="https://www.imdb.com/title/tt0816692/" target="_blank">
+                                    Interstellar
+                                </a>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Cooper</li>
+                                    <li>Murph</li>
+                                </ul> <!-- Closing tags for table -->
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- End of the movie table code and major section of modification from module 6 html-->
+
+        <!-- ***  added the two HTML line breaks between the two cards as per assignment -->
+        <br>
+        <br>
+
+        <div class="card">   <!-- creating a card class that will hold conent and links to favorite foods in an ordered list -->
+            <div class="card-title"> <!-- The tile for this card -->
+                Top 5 Favorite Foods
+            </div>
+            <div class="card-content">
+                <ol> <!-- Starting the ordered list as learned early on in th HTML/css book. This is not in any particular order, food preferances change. -->
+                    <li>
+                        <a href="https://www.simplyrecipes.com/recipes/homemade_pizza/" target="_blank">
+                            Pizza
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.foodnetwork.com/recipes/bobby-flay/perfectly-grilled-steak-recipe-1973350" target="_blank">
+                            Grilled Steak
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.foodnetwork.com/recipes/rachael-ray/macaroni-and-cheddar-cheese-recipe-2131153" target="_blank">
+                            Mac and Cheese
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.spendwithpennies.com/homemade-pierogi/" target="_blank">
+                            Pierogi
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tastesbetterfromscratch.com/braised-short-ribs/" target="_blank">
+                            Braised Short Ribs
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section  -->
+    <footer>
+        <p>
+            <!--  Added copyright year and last name aligned left as instructed -->
+            <span id="footer-copyright">Copyright 2021 - Jankowski</span>
+            <a href="../index.html">&laquo; Back to Landing Page</a>
+        </p>
+    </footer>
+</body>
+</html>

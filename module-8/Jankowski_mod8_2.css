@@ -1,0 +1,162 @@
+/* 
+    Max Jankowski
+    2/15/2026
+    CSS styling for Assignment 6.2   
+
+	Kept the same palette as mod6, no point reinventing the wheel 
+	*/
+
+/* Styling the header */
+header { /* Selecting a background for header that stands out but provides contrast with text */    
+    background-color: #2C3E50;
+    
+    /* adding a white text to stand out in grey background */    
+    color: white;      
+    padding: 20px; /* requiremnt for padding */   
+    text-align: center; /* Centering the text as required */
+}
+
+h1 {/* setting h1 weight to 400 as required  */
+    font-weight: 400;
+}
+
+   /* setting all these to the requirments set in assignment instructions*/
+#navbar {  
+    overflow: hidden;
+    background-color: #3498DB; /* bright blue from the color palette */   
+    border-bottom: 15px solid #2C3E50; /*border weight as required and using the dark blue grey color */
+}
+
+/* styling the links in the nav bar, set to requirements and following palette. Avoiding indiv comments, as this is just following instructions. */   
+#navbar a {  
+    float: left; 
+    display: block;   
+    color: white; /* This works with my palette */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* styling the change in appearance elements have when user hovers over them */
+#navbar a:hover { 
+    background-color: #2C3E50;       
+    color: #ECF0F1;
+}
+
+/* Styling the contianer div that wraps around content or card */
+/* Updated the container from last time to reflect new requirements */
+#container {
+    margin: 2% 5% 100px 5%;
+    padding: 10px;	
+}
+
+/* Styling the card class  */
+.card { /* Setting to instructed values */  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);   
+    transition: 0.3s;
+    width: 50%;
+	/*border: 1px solid #ccc;
+	border-radius: 4px; /* added for modern styling */
+}
+
+.card-title { /* styling the card title that has the heading, as per requirements */    
+    text-align: center;       
+    font-size: 2em;  
+    color: #2C3E50; /*Using the blue gray to match header and footer */       
+    font-weight: 400;
+}
+
+/* styling the contents in the card class  as per requiments */
+.card-content {  
+    padding: 2px 16px;
+}
+
+.card:hover { /* Creating the box shadow when user hovers over the card */    
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Styling section for the footer */
+
+/* *** Updated footer position from absolute to fixed as required *** 
+   Fixed keeps the footer pinned to the bottom of the viewport while scrolling *** */
+footer { /*set to requirments */
+    background-color: #2C3E50; /* Same as header for consistency */   
+    position: fixed;       
+    bottom: 0;    
+    left: 0; /* *** Anchors footer flush to the left edge of the viewport *** */
+    width: 100%;
+}
+
+
+footer p {
+    color: white; /* Works with my palette */    
+    font-weight: 400;    
+    float: right;       
+    padding-right: 10px;       
+    font-style: italic;
+}
+
+footer a {    
+    text-decoration: none;    
+    color: white;
+}
+
+/* styling the footer hover effect, changes when user hovers over it */
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* added the copyright span that floats to the left side of footer as per requirements for mod 8 */
+#footer-copyright {
+    float: left;
+    padding-left: 10px;
+    color: white;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* targeting movies table by the id selector, giving this one a simple single border cell*/
+#movies {
+    border-collapse: collapse;  
+    width: 100%;                
+    margin-bottom: 30px;        
+}
+
+/* added styling for table header for mod 8 */
+#movies th {
+    padding-top: 12px;          /* required */
+    padding-bottom: 12px;        /* required */
+    text-align: left;        /* required */
+    background-color: #2C3E50;  /* *** using the palette to mathc the header *** */
+    color: white;
+    padding-left: 10px;
+}
+
+/* styles for table data cell */
+#movies td {
+    border: 1px solid #ddd;      /* required */
+    padding: 8px;                /* required */
+    vertical-align: middle;
+}
+
+/* *** removing the default browser padding */
+#movies td ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+/* adding for readability */
+#movies td ul li {
+    margin: 3px 0;
+}
+
+/* styles for the lnks inside the movie col */
+#movies td a {
+    color: #3498DB;             
+    text-decoration: none;
+}
+
+/* adding visual feedback when cursor is hovering over */
+#movies td a:hover {
+    text-decoration: underline;
+}
