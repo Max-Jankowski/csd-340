@@ -1,0 +1,104 @@
+<!-- 
+Max Jankowski 
+CSD340 Assignment 9.3
+Bellevue University
+
+
+This is the opening prologue for the peter jackson's Lord of the rings trilogy 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Assignment 9.3 - JavaScript Part 1">
+    <meta name="keywords" content="HTML, CSS, JavaScript, web development, CSD 340">
+    <meta name="author" content="Max Jankowski">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSD 340 Web Development with HTML and CSS</title>
+
+   <!-- <link rel="stylesheet" href="Jankowski_Mod9_3.css"> --> <!-- Commented out the CSS link, It may make it more difficult to read. I like it, but is not a requirement. Uncomment to see the styling! -->
+</head>
+<body>
+    <div id="container">
+        <h1>Assignment 9.3: JavaScript - Part 1</h1>
+
+        <h2>The Lord of the Rings: Prologue</h2>
+
+        <p>
+            The world has changed. I feel it in the water. I feel it in the earth. I smell it in the air.
+            Much that once was is lost, for none now live who remember it.
+        </p>
+
+        <p>
+            It began with the forging of the Great Rings. Three were given to the Elves, immortal, wisest and fairest of all beings.
+            Seven to the Dwarf-Lords, great miners and craftsmen of the mountain halls. And nine, nine rings were gifted to the race of Men,
+            who above all else desire power. For within these rings was bound the strength and the will to govern each race.
+            But they were all of them deceived, for another ring was made. Deep in the land of Mordor, in the Fires of Mount Doom,
+            the Dark Lord Sauron forged a master ring, and into this ring he poured his <span id="word1" class="blank">_________</span>, <!-- creating blank spans and linking to objects that have word as their stored variable  -->
+            his <span id="word2" class="blank">_________</span> and his will to dominate all life.
+            <em>One ring to rule them all.</em>
+        </p>
+
+        <p>
+            One by one, the free lands of Middle-Earth fell to the power of the Ring, but there were some who resisted.
+            A last alliance of men and elves marched against the armies of Mordor, and on the very slopes of Mount Doom,
+            they fought for the freedom of Middle-Earth. Victory was near, but the power of the ring could not be undone.
+            It was in this moment, when all hope had faded, that Isildur, son of the king, took up his father's sword.
+            Sauron, enemy of the free peoples of Middle-Earth, was defeated. The Ring passed to Isildur, who had this one chance
+            to destroy evil forever, but the hearts of men are easily <span id="word3" class="blank">_________</span>.
+            And the ring of power has a will of its own. It betrayed Isildur, to his death.
+        </p>
+
+        <p>
+            And some things that should not have been forgotten were lost. History became legend. Legend became myth.
+            And for two and a half thousand years, the ring passed out of all knowledge. Until, when chance came, it ensnared another bearer.
+            It came to the creature Gollum, who took it deep into the tunnels of the Misty Mountains. And there it consumed him.
+            The ring gave to Gollum unnatural long life. For five hundred years it poisoned his mind, and in the gloom of Gollum's cave, it waited.
+            Darkness crept back into the forests of the world. Rumor grew of a shadow in the East, whispers of a nameless fear,
+            and the Ring of Power perceived its time had come. It abandoned Gollum, but then something happened that the Ring did not intend.
+            It was picked up by the most unlikely creature imaginable: a <span id="word4" class="blank">_________</span>, Bilbo Baggins, of the Shire.
+            <em>For the time will soon come when hobbits will shape the fortunes of all.</em>
+        </p>
+
+        <div class="btn-area"> <!-- creating button classes for objects that user clicks and has a blank span filled in-->
+            <button onclick="fillWord1()">cruelty</button> 
+            <button onclick="fillWord2()">malice</button>
+            <button onclick="fillWord3()">corrupted</button>
+            <button onclick="fillWord4()">hobbit</button>
+        </div>
+
+        <address>
+            <p><a href="https://www.bellevue.edu" target="_blank">Bellevue University</a></p>
+            <p>1000 Galvin Road South</p>
+            <p>Bellevue, NE 68005</p>
+        </address>
+    </div>
+
+    <script>
+        // Holding the 4 variable of words to fill the blank spans
+        var word1 = "cruelty";
+        var word2 = "malice";
+        var word3 = "corrupted";
+        var word4 = "hobbit";
+
+        // JS functions to insert each blank span with the correct word from LOTR movie prologue
+        function fillWord1() {
+            document.getElementById("word1").innerHTML = word1;
+        }
+
+        function fillWord2() {
+            document.getElementById("word2").innerHTML = word2;
+        }
+
+        function fillWord3() {
+            document.getElementById("word3").innerHTML = word3;
+        }
+
+        function fillWord4() {
+            document.getElementById("word4").innerHTML = word4;
+        }
+    </script>
+</body>
+</html>

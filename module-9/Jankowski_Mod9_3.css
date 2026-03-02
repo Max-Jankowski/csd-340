@@ -1,0 +1,99 @@
+/* 
+Max Jankowski 
+CSD340 Assignment 9.3 - Stylesheet
+Bellevue University
+*/
+
+/* Import a fantasy-style serif font */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+
+body {
+    font-family: 'IM Fell English', Georgia, serif;
+    background-color: #1a1408;
+    color: #c8a96e;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 30px;
+    line-height: 1.8;
+}
+
+/* Parchment-style content area */
+#container {
+    background-color: #2b1f0e;
+    border: 1px solid #6b4f2a;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+    font-size: 1.6em;
+    color: #e8c87a;
+    border-bottom: 1px solid #6b4f2a;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #a8824a;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+p {
+    margin-bottom: 1.2em;
+}
+
+em {
+    color: #e8c87a;
+}
+
+/* The blank spans */
+span.blank {
+    color: #888;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+/* Buttons */
+.btn-area {
+    margin-top: 20px;
+    border-top: 1px solid #6b4f2a;
+    padding-top: 15px;
+}
+
+button {
+    background-color: #3d2b0e;
+    color: #c8a96e;
+    border: 1px solid #6b4f2a;
+    padding: 6px 14px;
+    margin: 4px 3px;
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: 0.95em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5a3f18;
+    color: #f0d898;
+}
+
+/* Address block */
+address {
+    margin-top: 30px;
+    border-top: 1px solid #6b4f2a;
+    padding-top: 15px;
+    font-style: normal;
+    font-size: 0.9em;
+    color: #8a6a3a;
+}
+
+address a {
+    color: #a8824a;
+    text-decoration: none;
+}
+
+address a:hover {
+    color: #e8c87a;
+    text-decoration: underline;
+}
