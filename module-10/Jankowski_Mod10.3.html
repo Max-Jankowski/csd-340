@@ -1,0 +1,143 @@
+<!-- 
+Max Jankowski 
+CSD-340 Module 10 assignment 2
+Bellevue University
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSD 340 Web Development with HTML and CSS</title>
+  <link rel="stylesheet" href="Jankowski_Mod10.3.css" />   <!-- Linking to css file -->
+
+
+</head>
+
+<body>
+  <!-- including the header required for assignemnt  -->
+  <h1>Assignment 10.3: JavaScript &mdash; Part 2</h1>
+
+  <!-- Subtitle paragraph gives the page a descriptive theme line -->
+  <p class="subtitle">Old vs. New &mdash; BMW M3 Evolution</p>
+
+
+  <!-- flexbox gallery container to hold cards -->
+  <div class="gallery">
+
+
+    <!-- Card on the new and old M3  -->
+    <div class="card">
+
+      <h2>The M3</h2>
+      <!-- Section heading labels which image series this card belongs to -->
+
+      <!-- Large display image, this is the image that gets replaced when a thumbnail is clicked. -->
+      <div class="display-box">
+        <img id="m3-main" src="Old_M3.jpg" alt="BMW M3 main view" />
+      </div>
+
+      <!-- Thumbnail row  that contains clickable image with tag -->
+      <div class="thumbs">
+
+        <!-- Thumbnail of a E30 M3 default or active upon entering page -->
+        <div class="thumb-wrap">
+          <img src="Old_M3.jpg"
+               alt="E30 M3"
+               class="active"
+               onclick="swapImage('m3-main', 'Old_M3.jpg', this, 'm3-label', 'E30 M3 — 1986')" />
+          <span>E30 — 1986</span>
+          <!-- inline element used for a small txt label under a thumbnail -->
+        </div>
+
+        <!-- Thumbnail of a G80 M3  -->
+        <div class="thumb-wrap">
+          <img src="New_M3.jpg"
+               alt="G80 M3"
+               onclick="swapImage('m3-main', 'New_M3.jpg', this, 'm3-label', 'G80 M3 — 2024')" />
+          <span>G80 — 2024</span>
+        </div>
+
+      </div>
+
+
+      <!-- JavaScript will undate this text each time a thumbnail is clicked. -->
+      <p class="label" id="m3-label">E30 M3 &mdash; 1986</p>
+
+    </div>
+    
+
+    <!-- Creating card 2 that has the new and old valvetrain images for M3s -->
+    <div class="card">
+
+      <h2>The Valvetrain</h2>
+
+      <!-- Large display image for the valvetrain series -->
+      <div class="display-box">
+        <img id="vt-main" src="Old_valvetrain.jpeg" alt="Valvetrain main view" />
+      </div>
+
+      <div class="thumbs">
+
+        <!-- Thumbnail 1: S14 valvetrain (default/active on page load) -->
+        <div class="thumb-wrap">
+          <img src="Old_valvetrain.jpeg"
+               alt="Old valvetrain"
+               class="active"
+               onclick="swapImage('vt-main', 'Old_valvetrain.jpeg', this, 'vt-label', 'S14 Valvetrain — Single Cam')" />
+          <span>S14 — Single Cam</span>
+        </div>
+
+        <!-- Thumbnail 2: S58 valvetrain newer product -->
+        <div class="thumb-wrap">
+          <img src="New_valvetrain.jpg"
+               alt="New valvetrain"
+               onclick="swapImage('vt-main', 'New_valvetrain.jpg', this, 'vt-label', 'S58 Valvetrain — Twin Cam')" />
+          <span>S58 — Twin Cam</span>
+        </div>
+
+      </div>
+
+
+      <!-- caption for the valvetrain card -->
+      <p class="label" id="vt-label">S14 Valvetrain &mdash; Single Cam</p>
+
+    </div>
+
+
+  </div>
+
+  <!-- Small instructional note at the bottom of the page -->
+  <p class="instruction">Click a thumbnail to swap the image above.</p>
+
+
+ >
+  <script>
+
+    /*   
+     this function in the onclick mouse event reuired for the assignemnt, it replaces the large image with selected thumbnail, moves the css active class to clicked,
+	 and updates the caption for main image. https://www.sitepoint.com/community/t/onclick-image-swapping/85946 
+     */ 
+    function swapImage(mainId, newSrc, thumb, labelId, labelText) {
+
+      // part 1: finding the large display by the ID and update the src attribute, search DOM for the element with the right ID 
+    
+      document.getElementById(mainId).src = newSrc;
+
+      // part 2: removes the active class from all thumbnails in the card,then adds it to the one that was cliucked      
+      var siblings = thumb.parentElement.parentElement.querySelectorAll('img');
+      siblings.forEach(function(img) {
+        img.classList.remove('active'); // clears the active state from thumbnails
+      });
+      thumb.classList.add('active');    // set active state on the clicked or activated thumbnail
+
+      // part 3, finding the caption that the id and replacing the text content of main image      
+      document.getElementById(labelId).textContent = labelText;
+    }
+
+  </script>
+
+</body>
+</html>
