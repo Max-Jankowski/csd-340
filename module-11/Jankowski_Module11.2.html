@@ -1,0 +1,165 @@
+<!-- 
+Max Jankowski 
+Bellevue University 
+Module 11 
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /> <!-- Standard boilerplate for html code for this class at least  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSD 340 Web Development with HTML and CSS</title>
+  <link rel="stylesheet" href="Jankowski_Module11.2.css" />
+</head>
+<body>
+
+  <div id="container">
+
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+
+    <p class="instruction">
+      Enter a task below and click <strong>Add</strong> to save it to your list.
+      Use <strong>Delete Last Entry</strong> to remove the most recent item,
+      or select one from the dropdown and click <strong>Delete Selected Item</strong> to remove it specifically.
+      Click <strong>Sort</strong> to alphabetize the list.
+    </p>
+
+    <hr />
+
+    <!-- Element to have user input text -->
+    <input type="text" id="taskInput" placeholder="Enter a task..." />
+
+    <!-- Using the same action buton elements used in the examples  -->
+    <div class="btn-group">
+      <button id="btnAdd"  onclick="addTask()">Add</button>
+      <button id="btnDel"  onclick="deleteLastEntry()">Delete Last Entry</button>
+      <button id="btnSort" onclick="sortTasks()">Sort</button>
+    </div>
+
+    <!-- allowing user to delete a specific item via dropdown element -->
+    <h3>Delete a Specific Item</h3>
+    <select id="itemSelect">
+      <option value="">-- Select item to delete --</option>  <!-- item options are enered here by updateDrop() in JavaScript -->
+    </select>
+    <div class="btn-group">
+      <button id="btnDelSelected" onclick="deleteSelected()">Delete Selected Item</button> <!-- calls the deleteSelected method to delete item that was chosen by user  -->
+    </div>
+
+    <!-- Live task list renders here -->
+    <div id="listDisplay"></div>
+
+  </div><!-- ending the container that holds the visual elements -->
+
+  <script>
+    // defining the array that holds all the tasks 
+    var taskArray = [];
+
+    // Reads the text in the input box and pushes value into taskArray and refreshes display
+    function addTask() {
+      var input = document.getElementById("taskInput");
+      var value = input.value.trim();
+
+      if (value === "") {
+        alert("Please enter a task before clicking Add.");
+        return;
+      }
+
+      taskArray.push(value);                                          // adding item to array
+      alert("Item: " + value + " Added as Item " + taskArray.length); // confrims
+      input.value = "";                                               // clears text in box
+      displayTasks();                                                 // renews the display
+      updateDrop();                                                  // refreash the dropdown 
+    }
+
+    // building the method to delete the last element entered using pop(), shows alert
+    function deleteLastEntry() {
+      if (taskArray.length === 0) {
+        alert("The list is already empty — nothing to delete.");
+        return;
+      }
+
+      var removed = taskArray.pop();
+      alert("Deleted: \"" + removed + "\"");         	//many of these method repeat for each function 
+      displayTasks();
+      updateDrop();
+    }  
+    // Reads the selected text from the dropdown and used splice to delete it out of 'taskArray'
+    function deleteSelected() {
+      var select = document.getElementById("itemSelect");
+      var index  = select.value;
+
+      if (index === "") {
+        alert("Please select an item from the dropdown first.");
+        return;
+      }
+
+      var removed = taskArray.splice(index, 1);        // Remove 1 item at chosen index point
+      alert("Deleted: \"" + removed[0] + "\"");
+      displayTasks();
+      updateDrop();
+    }
+	
+    // Sorts taskArray alphabetically using the built-in sort(), https://www.geeksforgeeks.org/javascript/javascript-program-to-sort-words-in-alphabetical-order/
+    function sortTasks() {
+      if (taskArray.length === 0) { //error message when no elements are stored. 
+        alert("Nothing to sort yet — add some tasks first.");
+        return;
+      }
+
+      taskArray.sort();                               
+      alert("Your list has been sorted alphabetically!");
+      displayTasks();
+      updateDrop();
+    }
+  
+    // Builds a visiable task list from the current elements in 'taskArray'
+    function displayTasks() {
+      var container = document.getElementById("listDisplay");
+
+      if (taskArray.length === 0) {
+        container.innerHTML = '<p class="empty-state">No tasks yet — add one above!</p>';
+        return;
+      }
+
+      var html = '<p class="list-header">Your To-Do List (' + taskArray.length + ' item' + (taskArray.length !== 1 ? 's' : '') + ')</p>';
+
+      for (var i = 0; i < taskArray.length; i++) {
+        html += '<div class="task-item">'						// errors here in concatination have caused much stress. need to pay better attention
+              +   '<span class="task-num">' + (i + 1) + '</span>'
+              +   '<span class="task-text">' + taskArray[i] + '</span>' // error here prevented adding elements to the array display
+              + '</div>';
+      }
+
+      container.innerHTML = html;
+    }
+
+    // making a function that rebuilds the visual reprosentation of the array 
+    function updateDrop() {
+      var select = document.getElementById("itemSelect");
+      select.innerHTML = '<option value="">-- Select item to delete --</option>';
+
+      for (var i = 0; i < taskArray.length; i++) {
+        var option = document.createElement("option");
+        option.value = i;
+        option.textContent = (i + 1) + ". " + taskArray[i];
+        select.appendChild(option);
+      }
+    }
+
+    // allows the user to just press enter to add element to array 
+    document.getElementById("taskInput").addEventListener("keydown", function(e) {
+      if (e.key === "Enter") addTask();
+    });
+  </script>
+
+</body>
+</html>
+
+<!-- References 
+https://dev.to/smackdh/to-do-list-using-javascript-1e0n
+https://www.geeksforgeeks.org/javascript/how-to-create-dropdown-list-using-javascript/
+https://www.geeksforgeeks.org/javascript/javascript-program-to-sort-words-in-alphabetical-order/
+https://www.geeksforgeeks.org/javascript/task-scheduler-using-html-css-and-js/
+-->

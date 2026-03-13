@@ -1,0 +1,321 @@
+/*
+  Max Jankowsk
+  Bellevue University 
+  CSD 340
+  Module 11.2 
+  To-Do List CSS - Styled to match bioSite/landing page theme
+  
+  Using some site.css idea from main landing page, trying to keep palette
+  
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* body styling*/
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #F5F1E8;
+    padding: 20px;
+}
+/* styling the main container */
+#container {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    background-color: #2C5F2D;
+    color: #F5F1E8;
+    border: 2px solid #D4A574;
+    padding: 20px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* h2 mirrors site.css — slate blue bg, cream text, gold left bar */
+h2 {
+    background-color: #4A5568;
+    color: #F5F1E8;
+    border-left: 4px solid #D4A574;
+    padding: 15px;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* h3 mirrors site.css — forest green text, gold underline */
+h3 {
+    color: #2C5F2D;
+    border-bottom: 2px solid #D4A574;
+    padding-bottom: 8px;
+    font-size: 1.3em;
+    font-weight: 400;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* added section for this assignment, styling the instructions for the user to use interactive eleemtns  */
+.instruction {
+    color: #4A5568;
+    font-size: 0.95em;
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+/* Gold rule matchs the main site */
+hr {
+    border: none;
+    border-top: 2px solid #D4A574;
+    margin: 30px 0;
+}
+
+/* another added eleemtn for this assignemnt  */
+#taskInput {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1em;
+    color: #333333;
+    background-color: #F5F1E8;
+    border: 2px solid #D4A574;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#taskInput:focus {
+    border-color: #2C5F2D;
+    box-shadow: 0 0 0 3px rgba(44, 95, 45, 0.15);
+}
+
+#taskInput::placeholder {
+    color: #A89880; 
+}
+
+/* Same as the text input for visual consistency, added to this assignment  */
+#itemSelect {
+    width: 100%;
+    padding: 11px 16px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.95em;
+    color: #333333;
+    background-color: #F5F1E8;
+    border: 2px solid #D4A574;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+#itemSelect:focus {
+    border-color: #2C5F2D;
+}
+
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+/* styling the buttons on the container, there are some contrasts, but tried to stay consistant  */
+button {
+    padding: 11px 22px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.95em;
+    font-weight: 400;
+    color: #F5F1E8;           /* Cream text on all buttons */
+    border: 2px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+    letter-spacing: 0.3px;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* green for the add button */
+#btnAdd {
+    background-color: #2C5F2D;
+    border-color: #2C5F2D;
+}
+
+#btnAdd:hover {
+    background-color: #1e4220;
+    box-shadow: 0 3px 10px rgba(44, 95, 45, 0.35);
+}
+/* Red for the delete button, styled this way as I wanted the user to know that thiis is a disructive action */
+#btnDel {
+    background-color: #8B3A3A;
+    border-color: #8B3A3A;
+}
+
+#btnDel:hover {
+    background-color: #6b2b2b;
+    box-shadow: 0 3px 10px rgba(139, 58, 58, 0.35);
+}
+
+/* The sort button has a neutral blue tone */
+#btnSort {
+    background-color: #4A5568;
+    border-color: #4A5568;
+	color: #F5F1E8;  
+}
+
+#btnSort:hover {
+    background-color: #354058;
+    box-shadow: 0 3px 10px rgba(74, 85, 104, 0.35);
+	color: #F5F1E8;
+
+}
+
+
+/*I guess I could have made this one red, but I wanted to differentate from the main pop() delete */
+#btnDelSelected {
+    background-color: #D4A574;
+    border-color: #D4A574;
+    color: #333333;            /* Dark text on light gold background */
+}
+
+#btnDelSelected:hover {
+    background-color: #b8895a;
+    color: #F5F1E8;
+    box-shadow: 0 3px 10px rgba(212, 165, 116, 0.40);
+}
+
+
+#listDisplay {
+    margin-top: 28px;
+}
+
+/* styole for the label above the array list */
+.list-header {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #2C5F2D;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #D4A574;  /* Gold rule matches site.css hr */
+    font-family: Georgia, 'Times New Roman', serif;
+}
+/* Cream background tiles on the white card — subtle warm nesting */
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    background-color: #F5F1E8;
+    border: 1px solid #D4A574;    /* Gold border ties each row to the palette */
+    border-radius: 6px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s ease;
+    animation: fadeSlideIn 0.2s ease;
+}
+
+.task-item:hover {
+    background-color: #EDE8DA;    /* Slightly deeper cream on hover */
+}
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* styling the numbered badges for the array list */
+.task-num { /* https://www.geeksforgeeks.org/javascript/task-scheduler-using-html-css-and-js/ */
+    min-width: 28px;
+    height: 28px;
+    background-color: #2C5F2D;
+    color: #F5F1E8;
+    border: 1px solid #D4A574;
+    border-radius: 4px;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', serif;
+    flex-shrink: 0;
+}
+
+.task-text {
+    font-size: 0.97em;
+    color: #333333;
+}
+
+
+/* style of text when list is empty*/
+.empty-state {
+    text-align: center;
+    padding: 24px 0 8px;
+    color: #A89880;
+    font-style: italic;
+    font-size: 0.95em;
+}
+
+
+/* The reset is pretty much a copy of the site.css */
+a {
+    color: #87CEEB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #D4A574;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #4A5568;
+}
+
+@media (max-width: 768px) {
+    #container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #btnDelSelected {
+        width: 100%;
+    }
+}
